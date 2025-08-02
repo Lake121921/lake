@@ -1,0 +1,7 @@
+.img_container {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain; /* or cover */
+  display: block;
+}

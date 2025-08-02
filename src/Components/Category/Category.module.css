@@ -1,0 +1,36 @@
+.Cat{
+    height: 350px;
+    width: 350px;
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.2);
+}
+.Cat img{
+    width: 100%;
+    object-fit: contain;
+    max-height: 250px;
+    padding: 0px 10px;
+}
+.Cat a{
+    text-decoration: none;
+    color: rgb(35,35,35);
+}
+.Cat h2
+.Cat p{
+    padding: 5px;
+    margin-left: 15px;
+
+}
+.Cat p{
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(9,132,209);
+}
+{/*wode lay geba lemadereg new*/}
+{/* (4,1fr)4 silalen equal endisikemtelen new*/}
+.Cat_container{
+    position: relative;
+    margin-top: -10%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    place-items: center;
+}
