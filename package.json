@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Lake121921.github.io/amazone",
+  "homepage": "https://Lake121921.github.io/Amazone",
   "name": "amazone",
   "version": "0.1.0",
   "private": true,
@@ -13,6 +13,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.11.0",
+    "firebase": "^12.0.0",
     "gh": "^2.8.9",
     "numeral": "^2.0.6",
     "react": "^19.1.0",

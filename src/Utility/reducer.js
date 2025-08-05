@@ -2,7 +2,8 @@
 import { Type } from "./action.type"
 //initial state is the initial value of the basket ,the value of the basket is an empty array[]
 export const initialState={
-    basket:[]
+    basket:[],
+    user: null
 }
 //requre states & actions:state for intial value and action for the type of action we want to perform
 
@@ -44,6 +45,12 @@ export const reducer=(state,action)=>{
                 ...state,
                 basket:newBasket
             }
+            case Type.SET_USER://it is an action type comes from action.types.....action is an object && 'user'malet degemo eminasigebaw data malet new
+                return{
+                    ...state,
+                    user:action.user
+            
+                }
     /* return {
             //...called spread operater,it copie the existing state and add the new item to the backet.
             ...state,

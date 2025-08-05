@@ -60,7 +60,7 @@ function Header() {
                     </Link>
                     <Link to='/Sign In-and-Account & Lists'>
                         <p>Sign In</p>
-                        <span>Account & Lists</span>
+                        <span>Account and Lists</span>
                     </Link>
                     <Link to="/orders">
                         <p>returns</p>
