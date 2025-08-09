@@ -6,9 +6,10 @@ import LowerHeader from './LowerHeader';
 import classes from "./Header.module.css"
 import { Link } from 'react-router-dom';
 import { DataContext } from '../DataProvider/DataProvider';
+import { auth } from '../../Utility/firebase';//for sign out
 function Header() {
     //dispatch is a function you use to send an action to your reducer to update the state.
-   const [{basket},dispatch]= useContext(DataContext)
+   const [{user,basket},dispatch]= useContext(DataContext)//we add "user" if the user not login , the user must be signup ..this is waht we want,useru kale login enidiaderg kelele degemo signup enidiaderg malet new endihum logout maderg bifelige enidaderg
    const totalItem= basket?.reduce((amount,item)=>{
     return item.amount + amount
    },0)
@@ -48,7 +49,7 @@ function Header() {
                         <option value="">All</option>
                     </section>
                     <input type='text' />
-                    <SearchIcon size={25} />
+                    <SearchIcon size={38} />
                 </div>
                 {/*other section*/}
                 <div className={classes.order_container}>
@@ -58,8 +59,27 @@ function Header() {
                             <option value="">EN</option>
                         </select>
                     </Link>
-                    <Link to='/Sign In-and-Account & Lists'>
-                        <p>Sign In</p>
+                    <Link to={!user && '/auth'}>{/*redirect to auth/homepage...keza degemo{!user &&} yihen chemeren men malet new useru kelele(useru sign in yaladerege kehone ena setate lay lelele malet new ) wode auth redirect yihonal..sign in kaderege degemo useru signout emile option mazegajet aleben ..how check next*/}
+                    <div>
+                       {
+                        user?(
+                      <>
+                        <p>Hello{user.email?.split("@")[0]}</p>{/*if useru kale keza nuro email kalew emialu le hulet split yiderge ena ke @ befit first array ke @ behuala second array adergo [0] sinelew name bicha enideweta ye mejemeria array malet nameu malet new.*/}
+                        <span onClick={()=>auth.signOut}>Sign Out</span>{/*for redirect to sign out */}
+                      </>
+                        )
+                        :(
+                            //<></>optional chanining yibalale
+                            <>
+                            <p>Hello,please Sign In</p>{/*yihe degemo user kelele eminadergew new ...for unauthenticated user*/}
+                            <span>Accounts & Lists</span>
+                            </>
+                        )
+                       }
+                       
+
+                    </div>
+                       
                         <span>Account and Lists</span>
                     </Link>
                     <Link to="/orders">
