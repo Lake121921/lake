@@ -11,7 +11,7 @@ function Loder() {
 
      }}
      >
-        <FadeLoader color="#14bc30ff" />
+        <FadeLoader color="#54cc68ff" />
     </div>
   )
 }
