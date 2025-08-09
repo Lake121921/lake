@@ -59,21 +59,19 @@ function Header() {
                             <option value="">EN</option>
                         </select>
                     </Link>
-                    <Link to={!user && '/auth'}>{/*redirect to auth/homepage...keza degemo{!user &&} yihen chemeren men malet new useru kelele(useru sign in yaladerege kehone ena setate lay lelele malet new ) wode auth redirect yihonal..sign in kaderege degemo useru signout emile option mazegajet aleben ..how check next*/}
+                    <Link to={!user && "/auth"}>{/*redirect to auth/homepage...keza degemo{!user &&} yihen chemeren men malet new useru kelele(useru sign in yaladerege kehone ena setate lay lelele malet new ) wode auth redirect yihonal..sign in kaderege degemo useru signout emile option mazegajet aleben ..how check next*/}
                     <div>
-                       {
-                        user?(
+                       {user? (
                       <>
-                        <p>Hello{user.email?.split("@")[0]}</p>{/*if useru kale keza nuro email kalew emialu le hulet split yiderge ena ke @ befit first array ke @ behuala second array adergo [0] sinelew name bicha enideweta ye mejemeria array malet nameu malet new.*/}
-                        <span onClick={()=>auth.signOut}>Sign Out</span>{/*for redirect to sign out */}
+                        <p>Hello {user?.email?.split("@")[0]}</p>{/*if useru kale keza nuro email kalew emialu le hulet split yiderge ena ke @ befit first array ke @ behuala second array adergo [0] sinelew name bicha enideweta ye mejemeria array malet nameu malet new.*/}
+                        <span onClick={()=>auth.signOut()}>Sign Out</span>{/*for redirect to sign out......wode sign in yikeyeral malet new by the way signOut()is a method that is found on auth=>firebase */}
                       </>
-                        )
-                        :(
+                        ):(
                             //<></>optional chanining yibalale
-                            <>
-                            <p>Hello,please Sign In</p>{/*yihe degemo user kelele eminadergew new ...for unauthenticated user*/}
-                            <span>Accounts & Lists</span>
-                            </>
+                      <>
+                        <p>Hello,please Sign In</p>{/*yihe degemo user kelele eminadergew new ...for unauthenticated user*/}
+                        <span>Accounts & Lists</span>
+                      </>
                         )
                        }
                        

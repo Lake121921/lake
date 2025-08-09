@@ -7,9 +7,9 @@ import { auth } from "./Utility/firebase";
 function App() {
   const [{user},dispatch]=useContext(DataContext)
   useEffect(()=>{
-     auth.onAuthStateChanged((authUser)=>{
+     auth.onAuthStateChanged((authUser)=>{//onAuthStateChangeed is a method that managed by firebase
       if(authUser){
-        dispatch({
+        dispatch({//dispatch 2 neger yikebelale(type & user)
           type:Type.SET_USER,
           user:authUser,
         })
